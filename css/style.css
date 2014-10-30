@@ -1,0 +1,215 @@
+/****   MAIN    ****/
+body{
+    background: #f5f5f5;
+}
+.container{
+    margin-top: 5px;
+}
+.container .panel{
+    border-top: 0;
+    border-radius: 0 0 4px 4px;
+    position: relative;
+}
+.container .panel-body .panel{
+    border-radius: 4px;
+}
+h1 span.glyphicon{
+    font-size: 65%;
+    color: #777;
+    margin-left: 10px;
+}
+h1 span.glyphicon:hover{
+    color: #cc5c47;
+}
+.bullet{
+    border: 1px solid #adadad;
+    border-radius: 0 2px 2px 0;
+    position: absolute;
+    right: 168px;
+    bottom: 38px;
+    z-index: 5;
+    display: none;
+}
+.bullet div{
+    width: 10px;
+    height: 6px;
+    background: #777;
+    border: 1px solid #fff;
+}
+.features{
+    position: absolute;
+    top: 55px;
+    right: 17px;
+}
+.features .btn{
+    color: #666;
+}
+.features .btn.btn-info{
+    color: #fff;
+}
+.panel-footer #feature-code{
+    display: none;
+}
+.body .panel{
+    margin: 20px;
+}
+.android .table{
+    margin-bottom: 0;
+    font-size: 12px;
+}
+.android .panel-heading{
+    padding: 5px 15px;
+}
+.panel-selectors{
+    display: none;
+}
+.panel-selectors.show{
+    display: block;
+}
+.label a{
+    color: #fff;
+}
+.robo-quotes-text .label-success{
+    white-space: normal;
+}
+/*###   Editor  ###*/
+.editor-wrap{
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    background: #f5f5f5;
+}
+.CodeMirror{
+    border-radius: 3px;
+    height: 275px;
+}
+.apply{
+    margin-bottom: 15px;
+    outline: none;
+}
+/*###   Android     ###*/
+.android {
+    position: absolute;
+    left: 222px;
+    top: 230px;
+}
+/**** BODY ****/
+.body {
+    width: 336px;
+    height: 285px;
+    background-color: #A5C63B;
+    border-radius: 0px 0px 30px 30px;
+    position: absolute;
+}
+.body:before,
+.body:after {
+    background-color: #A5C63B;
+    content: '';
+    width: 75px;   
+    height: 122px;
+    bottom: -122px;
+    position: absolute;
+    border-radius: 0px 0px 50px 50px;
+}
+.body:before { left: 68px; }
+.body:after{ right: 68px; }
+/**** HEAD ****/
+.head {
+    width: 336px;
+    height: 155px;
+    background-color: #A5C63B;
+    border-radius: 200px 200px 0px 0px;
+    position: absolute;
+    top: -170px;
+    -webkit-animation-iteration-count: 2;
+       -moz-animation-iteration-count: 2;
+        -ms-animation-iteration-count: 2;
+         -o-animation-iteration-count: 2;
+            animation-iteration-count: 2;
+    -webkit-animation-duration: 2000 ms;
+       -moz-animation-duration: 2000 ms;
+        -ms-animation-duration: 2000 ms;
+         -o-animation-duration: 2000 ms;
+            animation-duration: 2000 ms;
+}
+.head:before,
+.head:after {
+    background-color: #A5C63B;
+    content: '';
+    width: 10px;   
+    height: 53px;
+    position: absolute;
+    top: -30px;
+    border-radius: 20px 20px 0px 0px;
+}
+.head:after { -webkit-transform: translate(63px, 0px) rotate(-30deg); -moz-transform:translate(63px, 0px) rotate(-30deg); -o-transform:translate(63px, 0px) rotate(-30deg);  }
+.head:before{ -webkit-transform: translate(255px, 0px) rotate(30deg); -moz-transform:translate(255px, 0px) rotate(30deg); -o-transform:translate(255px, 0px) rotate(30deg);  }
+/**** ARMS ****/
+.arms:before,
+.arms:after {
+    background-color: #A5C63B;
+    content: '';
+    width: 75px;   
+    height: 233px;
+    top: -8px;
+    position: absolute;
+    border-radius: 40px 40px 40px 40px;  
+}
+.arms:before { left: -90px; }
+.arms:after{ right: -90px; }
+/**** EYES ****/
+.eyes:before,
+.eyes:after {
+    background-color: #FFFFFF;
+    content: '';
+    width: 27px;   
+    height: 27px;
+    top: 68px;
+    position: absolute;
+    border-radius: 20px;
+}
+.eyes:before { left: 78px; }
+.eyes:after{ right: 78px; }
+
+/**** QUOTES ****/
+.robo-quotes{
+    position: relative;
+    top: -0;
+    left: -10px;
+    width: 220px;
+    padding: 56px 20px 20px 20px;
+}
+.robo-quotes .fa{
+    -webkit-transform: scaleX(-1);
+       -moz-transform: scaleX(-1);
+         -o-transform: scaleX(-1);
+            transform: scaleX(-1);
+              -ms-filter: "FlipH";
+                    filter: FlipH;
+    font-size: 210px;
+    line-height: 200px;
+    color: #ececec;
+    text-shadow: 0 0 3px rgb(27,27,27);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+.robo-quotes-text code{
+    background: #fff;
+}
+.robo-quotes-text{
+    position: absolute;
+    z-index: 6;
+    color: #555;
+    font-size: 12px;
+    padding-right: 30px;
+    text-align: center;
+}
+.robo-quotes{
+    -webkit-animation-delay: 0.5s;
+       -moz-animation-delay: 0.5s;
+        -ms-animation-delay: 0.5s;
+         -o-animation-delay: 0.5s;
+            animation-delay: 0.5s; 
+}

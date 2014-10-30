@@ -1,0 +1,97 @@
+<!--DEFAULT-->
+<div id="default-bla">
+	<span class="bla-bla"><br/>There are many built-in <code>functions in LESS</code>. Here are several examples.</span>
+</div>
+
+<!--LIST-->
+<div id="list-section">
+<div id="list">
+@list: red, green, blue, orange;
+.body{
+    list-length: length(@list);
+    background: extract(@list, 3);
+}
+</div>
+<span class="bla-bla"><code>Length</code> returns the number of elements in a value list. <code>Extract</code> returns the value at a specified position in a list.</span>
+</div>
+
+<!--DEFAULT-->
+<div id="default-section">
+<div id="default">
+.mixin(red)                   {background: red}
+.mixin(gray)                  {background: gray}
+.mixin(@col) when (default()) {background: @col}
+.body:before{
+    .mixin(red);
+}
+.body:after{
+    .mixin(grey);
+}
+.body{
+    .mixin(orange);
+}
+</div>
+<span class="bla-bla"><code>Default</code>available only inside guard conditions and returns <em>true</em> only if no other mixin matches, <em>false</em> otherwise.</span>
+</div>
+
+<!--TYPE-->
+<div id="type-section">
+<div id="type">
+.mixin(@property)when(isnumber(@property)){
+    height: @property;
+    border-radius: @property/10;
+}
+.mixin(@property)when(iscolor(@property)){
+    background: @property;
+}
+.arms:before{
+    .mixin(150px);
+}
+.arms:after{
+    .mixin(orange);
+}
+</div>
+<span class="bla-bla"><code>Isnumber</code> returns <em>true</em> if a value is a number, <em>false</em> otherwise. <code>Iscolor</code> returns <em>true</em> if a value is a color, <em>false</em> otherwise.</span>
+</div>
+
+<!--COLOR-->
+<div id="color-section">
+<div id="color">
+@color: orange;
+.body{
+    background: @color;
+    &:hover{
+        background: darken(@color, 20%);
+    }
+}
+.arms:before, .arms:after{
+    background: lighten(@color, 30%);
+}
+.body:before, .body:after{
+    background: fadeout(@color, 30%);
+}
+</div>
+<span class="bla-bla"><code>LESS</code> provides several functions that we can use to manipulate colors: <small>lighten(), darken(), saturate(), desaturate(), fadein(), fadeout(), fade(), spin(), mix()</small>.</span>
+</div>
+
+<!--@IMPORT-->
+<div id="import-section">
+<div id="import">
+@import "css/elements.less";
+.arms:before{
+    .gradient(#6CB1EE, #4F85B2, #BCE6FF);
+}
+.arms:after{
+    .inner-shadow(2px, 5px, 10px, 0.5);
+}
+</div>
+<span class="bla-bla">
+    Like standard CSS <code>LESS</code> allows <em>@import</em> rules files. But Less doesn't care where you put <em>@import</em> statements.
+</span>
+</div>
+<div id="clear-section">
+<span class="bla-bla">
+<br/>
+Look at the <span class="label label-info">code editor</span>. It's cleared!
+</span>
+</div>

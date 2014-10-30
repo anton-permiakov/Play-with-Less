@@ -1,0 +1,85 @@
+<!--DEFAULT-->
+<div id="default-bla">
+	<span class="bla-bla">Say "No" to the <del>values repeated dozens of times</del> across your stylesheet! Make your code easier with<br/><code>LESS variables</code></span>
+</div>
+
+<!--COMMON-->
+<div id="common-section">
+<div id="common">
+@color: red;
+.body{
+	background: @color;
+}
+</div>
+<span class="bla-bla">The <code>variables</code> will allow us to store a constant value that later can be reused in the entire stylesheet.</span>
+</div>
+
+<!--SCOPE-->
+<div id="scope-section">
+<div id="scope">
+@color: red;
+.body{
+	@color: blue;
+	background: @color;
+    &:before{	//is equal to .body:before
+        background: @color;
+    }
+}
+.arms:before{
+    background: @color;
+}
+</div>
+<span class="bla-bla"><code>Variables</code> will be inherited first from the local scope, and when it is not available locally it will search up a wider scope.</span>
+</div>
+
+<!--SELECTORS-->
+<div id="selectors-section">
+<div id="selectors">
+//Selectors
+@left-hand: arms:before;
+@right-hand: arms:after;
+//Properties
+@bg: background;
+.@{left-hand}{
+	@{bg}: yellow;
+}
+.@{right-hand}{
+	@{bg}: orange;
+}
+</div>
+<span class="bla-bla"><code>Variables</code> can also be used in other places as well, such as <code>selector names and property names</code></span>
+</div>
+
+<!--URLs-->
+<div id="urls-section">
+<div id="urls">
+@images: "images";
+.body{
+	background: url("@{images}/dots.png") repeat #777;
+}
+</div>
+<span class="bla-bla"><code>Variables</code> can also be used in other places as well, such as <code>URLs and @import statements</code></span>
+</div>
+
+<!--OPERATIONS-->
+<div id="operations-section">
+<div id="operations">
+@border: 10px;
+@border-type: solid gray;
+.arms:before{
+	border-top: @border * 2 @border-type;
+    border-right: @border - 5 @border-type;
+    border-bottom: @border + 5 @border-type;
+    border-left: @border - 2 @border-type    
+}
+</div>
+<span class="bla-bla">We can also do something like <code>addition, subtraction, multiplication and division</code> to number, color and variable in the style sheet.</span>
+</div>
+
+<!--CLEAR-->
+<div id="clear-section">
+	<span class="bla-bla">
+	<br/>
+		Look at the <code>code editor</code>. It's cleared!
+	</span>
+</div>

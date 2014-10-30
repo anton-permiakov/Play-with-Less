@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Play with less</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="js/play.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
+	<script src="codemirror/lib/codemirror.js"></script>
+	<script src="codemirror/mode/css/css.js"></script>
+	<link rel="stylesheet" href="codemirror/lib/codemirror.css">
+	<link rel="stylesheet" href="codemirror/theme/ambiance.css"></head>
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/animate.css"></head>
+	<link rel="stylesheet" href="css/style.css"></head>
+	<style></style>
+<body>
+	<div class="container">
+	<ul class="nav nav-tabs nav-justified" role="tablist" id="nav">
+		<li><a href="/">Nested rules</a></li>
+		<li><a href="variables.html">Variables</a></li>
+		<li class="active"><a href="mixins.html">Mixins</a></li>
+		<li><a href="useful_functions.html">Useful Functions</a></li>
+	</ul>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="page-header"><h1>Play with less <small>Mixins</small><span class="glyphicon glyphicon-hand-right"></span></h1></div>
+				<div class="btn-group features" id="feature-menu">
+					<button type="button" class="btn btn-default"><i class="fa fa-check"></i> Common</button>
+					<button type="button" class="btn btn-default"><i class="fa fa-check"></i> Parametric</button>
+					<button type="button" class="btn btn-default"><i class="fa fa-check"></i> Functions</button>
+                    <button type="button" class="btn btn-default"><i class="fa fa-check"></i> Conditional</button>
+					<button type="button" class="btn btn-info"><i class="fa fa-times"></i> Clear</button>
+				</div>
+				<div class="row">
+					<div class="col-md-5">
+						<div class="form-group editor-wrap">
+							<textarea class="form-control" name="" id="in" cols="30" rows="10" width="100%">/*put your less code here*/</textarea>
+						</div>
+						<button type="button" class="btn btn-default btn-lg btn-block apply" id="convert">Apply code</button>
+						<div class="form-group editor-wrap">
+							<textarea class="form-control" name="" id="out" cols="30" rows="10" >/*compiled css appears here*/</textarea>
+						</div>			
+					</div>
+					<div class="col-md-7">
+						<div class="robo-quotes">
+							<span class="fa fa-comment"></span>
+							<span class="robo-quotes-text"></span>
+						</div>
+						<div class="android">
+						    <div class="head">
+						        <div class="eyes"></div>
+						    </div>
+						    <div class="body">
+						    	<div class="panel panel-default panel-selectors">
+						    		<div class="panel-heading">
+						    			Selectors
+						    		</div>
+						    		<div class="panel-body">
+							    		<table class="table table-bordered table-condensed">
+							    			<thead>
+							    				<tr>
+							    					<th>Robo Detail</th>
+							    					<th>Selector</th>
+							    				</tr>
+							    			</thead>
+							    			<tbody>
+							    				<tr>
+							    					<td>Head</td>
+							    					<td><code>.head</code></td>
+							    				</tr>
+							    				<tr>
+							    					<td>Eyes (left/right)</td>
+							    					<td><code>.eyes:before</code>/<code>.eyes:after</code></td>
+							    				</tr>
+							    				<tr>
+							    					<td>Body</td>
+							    					<td><code>.body</code></td>
+							    				</tr>
+							    				<tr>
+							    					<td>Arms (left/right)</td>
+							    					<td><code>.arms:before</code>/<code>.arms:after</code></td>
+							    				</tr>
+							    				<tr>
+							    					<td>Legs (left/right)</td>
+							    					<td><code>.body:before</code>/<code>.body:after</code></td>
+							    				</tr>
+							    			</tbody>
+							    		</table>
+						    		</div>
+						    	</div>
+						        <div class="arms"></div>
+						    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel-footer">
+				<style></style>
+				<div id="feature-code"></div>
+			</div>
+		</div>
+	</div>
+<script>
+	var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('in'), {
+		lineNumbers: true,               // показывать номера строк
+		matchBrackets: true,             // подсвечивать парные скобки
+		indentUnit: 4,                   // размер табуляции
+		theme: 'ambiance'
+	});
+	var myCodeMirrorOut = CodeMirror.fromTextArea(document.getElementById('out'), {
+		lineNumbers: true,               // показывать номера строк
+		matchBrackets: true,             // подсвечивать парные скобки
+		indentUnit: 4,                   // размер табуляции
+		theme: 'ambiance'
+	});
+</script>	
+</body>
+</html>

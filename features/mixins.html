@@ -1,0 +1,103 @@
+<!--DEFAULT-->
+<div id="default-bla">
+	<span class="bla-bla"><code>Mixins</code> are a way of including (<em>"mixing in"</em>) a bunch of properties from one rule-set into another rule-set.</span>
+</div>
+<!--COMMON-->
+<div id="common-section">
+<div id="common">
+//1st mixin
+.bordered-eye{
+    border: 3px dotted gray;
+}
+//2nd mixin. use () to hide mixin from output
+.square-head(){
+    border-radius: 0;
+}
+.eyes:before{
+    .bordered-eye;
+}
+.head{
+    .square-head;
+}
+</div>
+<span class="bla-bla">
+	In <code>LESS</code>, we can use <code>Mixins</code> to reuse whole declarations in a CSS rule set to another rule set.
+</span>
+</div>
+<!--PARAMETRIC-->
+<div id="parametric-section">
+<div id="parametric">
+.head-radius(@radius){ //without default value
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}//with default value
+.body-radius(@radius: 50px){
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+.head{
+    .head-radius(20px);
+}
+.body{
+    .body-radius;
+}
+</div>
+<span class="bla-bla">
+    <code>Mixins</code> can also take <code>arguments</code>, which are variables pass to the block of selectors when it is mixed in. Default values are supported.
+</span>
+</div>
+<!--FUNCTIONS-->
+<div id="functions-section">
+<div id="functions">
+.surprised(){ //1st mixin
+    @width: 50px;
+    @height: 50px;
+}
+.eyes:before, .eyes:after{
+    .surprised();
+    width: @width;
+    height: @height;
+}
+.hand(){ // 2nd mixin with using of 1st
+    .surprised();
+    @hand-width: ((@width + @height)/4);
+}
+.arms:before{
+    .hand();
+    width: @hand-width;
+}
+</div>
+<span class="bla-bla">All variables defined in a <code>mixin</code> are visible and can be used in caller's scope (unless the caller defines its own variable with the same name).</span>
+<span class="bla-bla-functions"><br/>Do you really think I'm pretty???</span>
+</div>
+
+<!--CONDITIONAL-->
+<div id="conditional-section">
+<div id="conditional">
+.hand-radius(@radius)when(@radius>20px){
+    border-radius: @radius;
+    background: red;
+}
+.hand-radius(@radius)when(default()){
+    border-radius: @radius;
+    background: orange;
+}
+.arms:before{
+    .hand-radius(25px);
+}
+.arms:after{
+    .hand-radius(10px);
+}
+</div>
+<span class="bla-bla"><code>Less</code> has opted to implement conditional execution via guarded mixins instead of <em>if/else</em> statements</span>
+</div>
+
+
+<div id="clear-section">
+<span class="bla-bla">
+<br/>
+Look at the <span class="label label-info">code editor</span>. It's cleared!
+</span>
+</div>
